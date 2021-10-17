@@ -1,0 +1,382 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.body {
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  color: #1F1E1E;
+  font-family: "Roboto", sans-serif;
+
+}
+
+.title {
+  text-align: center;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 130%;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  /*цвет будет такой же как и у родителя*/
+}
+
+
+
+
+.container {
+  max-width: 1140px;
+  /*чтобы ширина на др жкранах могла уменьщаться 1140 = 1120(контент макета) + 10(леавый паддинг)+10(праввый паддинг)*/
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.header {
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.header__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  /*чтоыб под развн экраны картинка подстраивалаьс по высоте*/
+
+}
+
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  padding-bottom: 46px;
+}
+
+
+.header__phone {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 130%;
+  color: #ffff;
+}
+
+
+.header__phone-number {
+  margin-left: 20px;
+  padding: 12px 31px;
+  background-color: #886239;
+  border-radius: 22px;
+  font-weight: normal;
+}
+
+.menu {
+  width: 100%;
+  margin-top: 15px;
+  border: 1px solid #fff;
+  padding: 20px 0;
+  border-left: none;
+  border-right: none;
+}
+
+.menu__list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 16px;
+  color: #fff;
+
+
+}
+
+.header__title {
+  /*флек элемент*/
+  align-self: center;
+  margin-bottom: auto;
+  /*флекс элемент прижмется к верху контенера*/
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-weight: bold;
+  font-size: 90px;
+  line-height: 130%;
+}
+
+
+.header__content {
+  /*флекс элемент*/
+  margin-top: auto;
+  /*флекс эелмет пижетя  книзу контенера*/
+}
+
+.header__description {
+  max-width: 422px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 140%;
+  font-style: normal;
+}
+
+
+.header__btn {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 21px;
+  color: #fff;
+  padding: 10px 20px;
+  background-color: #886239;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.header__arrow {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.direction {
+  padding: 100px 0;
+}
+
+
+.direction__inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 31px;
+}
+
+
+.direction__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.direction__img {
+  display: block;
+}
+
+.direction__text {
+  font-family: "Roboto";
+  padding: 12px 19px 19px;
+  border: 1px solid #D9D9DE;
+  border-top: none;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.travel-info {
+  background-image: url("../images/bg_travel.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+
+  padding-top: 20px;
+  padding-bottom: 35px;
+}
+
+
+.travel-info__title {
+  font-family: "Roboto";
+  margin-bottom: 50px;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 130%;
+  color: #fff;
+}
+
+.travel-info__items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 54px 67px;
+
+}
+
+.travel-info__img {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.travel-info__text {
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 130%;
+  color: #fff;
+}
+
+
+.popular {
+  padding: 100px 0;
+
+}
+
+.popular__title {
+  margin-bottom: 40px;
+}
+
+
+.popular__items {
+  /*грид клнтенейр*/
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 32px;
+  padding-bottom: 82px;
+  border-bottom: 1px solid #D9D9DE;
+}
+
+.popular__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 24px 19px;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 256px;
+  /*высота картчоки из макета*/
+  line-height: 130%;
+}
+
+.popular__link:nth-child(3),
+.popular__link:nth-child(6) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.popular__link-title {
+  margin-bottom: 15px;
+  font-weight: 500;
+  font-family: "Roboto";
+}
+
+.popular__link-title--big {
+  font-size: 24px;
+  line-height: 130%;
+}
+
+.popular__country,
+.popular__time {
+  margin-bottom: 15px;
+}
+
+.popular__time {
+  margin-bottom: auto;
+}
+
+.popular__price {
+  margin-top: auto;
+  /*флекс элемент прижмется к низу контенйера, тем самым старна и вреям уедут вверх*/
+  font-weight: bold;
+  font-size: 16px;
+
+}
+
+.map {
+  padding-bottom: 100px;
+}
+
+.map__title {
+  margin-bottom: 46px;
+}
+
+.about {
+  padding-bottom: 100px;
+}
+
+.about__inner {
+  display: grid;
+  grid-template-columns: 488px 640px;
+  grid-gap: 32px;
+}
+
+
+.about__title {
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+
+.about__text {
+  line-height: 140%;
+  margin-bottom: 34px;
+}
+
+
+.about__link {
+  font-size: 16px;
+  line-height: 19px;
+  text-decoration-line: underline;
+  color: #C4C4C4;
+}
+
+
+.about__popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/video-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+
+}
+
+/*https://dimsemenov.com/plugins/magnific-popup/ плагни аналги  fansybox*/
+
+
+.gallery {
+  background-color: #886239;
+  color: #fff;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.gallery__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 39px;
+  padding-right: 160px;
+}
+
+
+.gallery__link {
+  font-size: 16px;
+  line-height: 19px;
+  text-decoration-line: underline;
+}
+
+.gallery__item-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 32px;
+}
+
+.slick-btn {
+  position: absolute;
+  top: -85px;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+.slick-prev {
+  right: 60px;
+}
