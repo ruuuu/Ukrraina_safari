@@ -1,3 +1,80 @@
+/*ttf- формат шритф а, он весит много, есть оптимальные шрифты это woff(длястарых браузеров)/woff2(для новых браузеров), поэтому конвертиуре из ttf -> woff2 в https://transfonter.org/ : загружаем файлы шрифтов(шрифты скачали с google.fonts в виде архива), и жмем Convert и скачиваем папку со сконвертированными шрифтами,там же будет файл css, в котром есть готовый код подклчения шрифтов http://joxi.ru/Vm6BDkjiRBRogm */
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Bold'), local('Roboto-Bold'),
+      url('../fonts/Roboto-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; /*для оптимизации загрузки шрифта*/
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Black'), local('Roboto-Black'),
+      url('../fonts/Roboto-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Light'), local('Roboto-Light'),
+      url('../fonts/Roboto-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Medium'), local('Roboto-Medium'),
+      url('../fonts/Roboto-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), local('Roboto-Regular'),
+      url('../fonts/Roboto-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Thin'), local('Roboto-Thin'),
+      url('../fonts/Roboto-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PT Serif';
+  src: local('PT Serif Bold'), local('PTSerif-Bold'),
+      url('../fonts/PTSerif-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PT Serif';
+  src: local('PT Serif'), local('PTSerif-Regular'),
+      url('../fonts/PTSerif-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+
 *,
 *::after,
 *::before {
@@ -8,13 +85,12 @@
 
 
 .body {
-
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
-  line-height: 140%;
+  line-height: 21px;
   color: #1F1E1E;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif; /*с засечками*/
 
 }
 
@@ -22,8 +98,8 @@
   text-align: center;
   font-weight: 500;
   font-size: 36px;
-  line-height: 130%;
-  font-family: "Roboto", sans-serif;
+  
+  font-family: "Roboto", sans-serif; /*serif - с засечками6 sans-serif без засечек*/
 }
 
 a {
@@ -32,12 +108,39 @@ a {
   /*цвет будет такой же как и у родителя*/
 }
 
+img{
+  max-width: 100%; /*на случай если картинка ольшая, то чтобы  не вываолись за пределы станицы*/
+   height: auto; /* чтобы пропорции картинки не терялись, те чтобы не искажалась, не сжималась и  не растягивалась)*/
+}
 
+p, h1, h2, h3, h4, h5, h6{
+  padding: 0;
+  margin: 0;
 
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.button{
+  padding: 12px 31px;
+  background-color: #886239;
+  font-size: 18px;
+  line-height: 21px;
+  border-radius: 22px;
+  font-weight: normal;
+  border-color: transparent;
+  color: #FFFFFF;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+}
 
 .container {
   max-width: 1140px;
-  /*чтобы ширина на др жкранах могла уменьщаться 1140 = 1120(контент макета) + 10(леавый паддинг)+10(праввый паддинг)*/
+  /*чтобы ширина на др экранах могла уменьшаться 1140 = 1120(контент макета) + 10(леавый паддинг)+10(праввый паддинг)*/
   margin: 0 auto;
   padding: 0 10px;
 }
@@ -54,7 +157,7 @@ a {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
-  /*чтоыб под развн экраны картинка подстраивалаьс по высоте*/
+  /*чтобы под разные экраны картинка подстраивалась по высоте*/
 
 }
 
@@ -78,10 +181,7 @@ a {
 
 .header__phone-number {
   margin-left: 20px;
-  padding: 12px 31px;
-  background-color: #886239;
-  border-radius: 22px;
-  font-weight: normal;
+  
 }
 
 .menu {
@@ -119,7 +219,7 @@ a {
 .header__content {
   /*флекс элемент*/
   margin-top: auto;
-  /*флекс эелмет пижетя  книзу контенера*/
+  /*флекс эелмет прижмется  к низу контенера*/
 }
 
 .header__description {
@@ -134,12 +234,12 @@ a {
 
 .header__btn {
   display: inline-block;
-  font-size: 18px;
+  /* font-size: 18px;
   line-height: 21px;
   color: #fff;
   padding: 10px 20px;
   background-color: #886239;
-  border-radius: 30px;
+  border-radius: 30px; */
   margin-bottom: 20px;
 }
 
@@ -280,7 +380,7 @@ a {
 
 .popular__price {
   margin-top: auto;
-  /*флекс элемент прижмется к низу контенйера, тем самым старна и вреям уедут вверх*/
+  /*флекс элемент прижмется к низу контенйера, тем самым страна и время уедут вверх*/
   font-weight: bold;
   font-size: 16px;
 
@@ -329,14 +429,15 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../images/video-bg.jpg");
+  background-image: url("../images/video-bg1.jpeg");
+  height: 400px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
 
 }
 
-/*https://dimsemenov.com/plugins/magnific-popup/ плагни аналги  fansybox*/
+
 
 
 .gallery {
@@ -380,3 +481,216 @@ a {
 .slick-prev {
   right: 60px;
 }
+
+.tour{
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.tour__title{
+  margin-bottom: 77px;
+}
+
+.tour__box{
+  column-count: 2;
+  column-gap: 47px;
+  border-bottom: 1px solid #D9D9D9DE;
+  padding-bottom: 50px;
+  margin-bottom: 44px;
+  font-family: "Roboto", sans-serif;
+}
+
+.tour__text{
+  margin-bottom: 15px;
+}
+
+.tour__text span{
+  font-weight: 700;
+}
+
+.tour__info{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 70px;
+}
+
+
+.tour__info-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-style: bold;
+  font-size: 58px;
+  line-height: 75px;
+  color: rgba(136, 98, 57, 1);
+  font-family: "PT Serif", serif;
+  text-align: center;
+}
+
+.tour__info-text{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  color: rgba(31, 30, 30, 1);
+  font-family: "Roboto", sans-serif;
+}
+
+.booking{
+  padding-top: 75px;
+  padding-bottom: 75px;
+  background-color: rgba(234, 234, 234, 1);
+}
+
+.booking__title{
+  margin-bottom: 43px;
+}
+
+.booking__form{
+  width: 832px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+
+}
+
+
+.booking__input, .booking__area{
+  padding: 14px 11px;
+  border: 1px solid #D9D9DE;
+  color: #C4C4C4;
+  outline: none;
+  background-color: #ffffff;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.booking__input{
+  width: 256px;
+  margin-bottom: 28px;
+}
+
+
+.booking__area{
+  width: 100%;
+  margin-bottom: 67px;
+  min-height: 112px;
+  resize: none;
+}
+
+.booking__input::placeholder,
+.booking__area::placeholder{
+  font-size: 16px;
+  line-height: 21px;
+  color: #C4C4C4;
+  font-family: "Roboto", sans-serif; /*sans-serif без засечек */
+}
+
+.booking__label{
+  display: flex;
+  align-items: center;
+  color:#1F1E1E;
+  font-size: 16px;
+  line-height: 21px;
+  text-decoration: underline;
+
+}
+
+.booking__checkbox{ /*прячем исходый чекбокс, котрй создал браузер*/
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  /* border: 2px solid #EAEAEA; */
+  overflow: hidden; /*скрываем то что не влезет в элемент*/
+  margin-right: 19px;
+  /* background-color: transparent; */
+  clip: rect(0,0,0,0);
+  padding-left: 45px;
+}
+
+.booking__checkbox-style{ /*чекбокс  свой совбственный*/
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 2px;
+  border: 2px solid #C4C4C4;
+  margin-left: -45px;
+}
+
+.booking__checkbox:checked + .booking__checkbox-style::before{ /*нажатй чекбокс*/
+
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /*чтобы квадратик поместсля в центре*/
+  background-color: #C4C4C4;
+}
+
+.footer{
+  color: #FFFFFF;
+  background-color: #1F1E1E;
+  padding-top: 77px;
+  padding-bottom: 81px;
+  font-family: "Roboto", sans-serif;
+}
+
+.footer__content .logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 69px;
+}
+
+.footer__inner{
+  display: flex;
+  justify-content: space-between;
+  max-width: 830px;
+  margin: 0 auto;
+}
+
+.footer__info {
+  width: 255px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.footer__inner-title {
+  margin-bottom: 7px;
+  font-weight: 500;
+}
+
+.footer__copy, .footer__link, .footer__address-text, .footer__phone, .footer__email {
+  opacity: 0.8;
+  margin-bottom: 3px;
+}
+
+.footer__copy {
+}
+
+.footer__link {
+}
+
+.footer__address {
+  width: 164px;
+}
+
+.footer__address-text {
+}
+
+.footer_contacts {
+  width: 209px;
+}
+
+.footer__phone {
+  display: block;
+}
+
+.footer__email {
+}
+
+/*https://www.youtube.com/watch?v=HMDRxBvUUSU остановилась на 1:53*/
